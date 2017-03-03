@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body ng-app="myapp" ng-controller="myAppController">
+城市:<input type="text" list="cityName" ng-model="cityNames" class="cityNameInput">
+<datalist id="cityName">
+    <option value={{cityValue}} ng-repeat="cityValue in cityNameIdArray">{{cityValue}}</option>
+</datalist>
+地区:<input type="text" list="townName" ng-model="townNames" class="townNameInput">
+<datalist id="townName">
+    <option value={{townValue}} ng-repeat="townValue in townNameIdArray">{{townValue}}</option>
+</datalist>
+
+<button><a href="#/">当天24小时气温分布</a></button>
+<button><a href="#/weatherInfoShow">天气信息</a></button>
+
+<div ng-view id="candiv">
+    <canvas id="canvas" style="width: 60%"></canvas>
+</div>
+
+<script src="javascripts/angular.js"></script>
+<script src="javascripts/angular-route.js"></script>
+<script src="javascripts/Chart.bundle.js"></script>
+<script src="javascripts/utils.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/route.js"></script>
+<script src="javascripts/sever.js"></script>
+<script src="javascripts/weather.js"></script>
+<script src="javascripts/index-temp.js"></script>
+</body>
+</html>
